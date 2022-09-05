@@ -1,0 +1,44 @@
+﻿@model otelyonet.Models.Kullanıcı
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Kullanıcı</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EPosta" class="control-label"></label>
+                <input asp-for="EPosta" class="form-control" />
+                <span asp-validation-for="EPosta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sifre" class="control-label"></label>
+                <input asp-for="Sifre" class="form-control" />
+                <span asp-validation-for="Sifre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RolID" class="control-label"></label>
+                <select asp-for="RolID" class ="form-control" asp-items="ViewBag.RolID">
+                    <option selected value="0" >
+                        Rol Seçiniz !
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

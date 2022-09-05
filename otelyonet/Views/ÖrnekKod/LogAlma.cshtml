@@ -1,0 +1,21 @@
+﻿@model otelyonet.ViewModel.LogAlmaViewModel
+
+@{
+    ViewData["Title"] = "Log Alma Örnek Sayfası";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Log Alma Örneği</h1>
+
+
+@if (Model.Sonuç!=0)
+{
+    <p class="text-success">@Model.Sonuç</p>
+}
+else
+{
+<p class="text-danger">@Model.Hata</p>
+}
+
+
+

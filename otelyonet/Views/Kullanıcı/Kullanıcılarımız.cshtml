@@ -1,0 +1,111 @@
+﻿@model IEnumerable<otelyonet.Models.Kullanıcı>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<form asp-controller="Kullanıcı" asp-action="Kullanıcılarımız" method="post">
+    <div class="row">
+        <div class="form-group">
+            <select name="seciliKullanıcı" class="form-control">
+                <option selected value="0">Rol Seçiniz !</option>
+                <option value="1">Admin</option>
+                <option value="2">Supervisor</option>
+                <option value="3">Anonim</option>
+                <option value="4">Gold</option>
+                <option value="5">Memur</option>
+                <option value="6">Platin</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="GÖSTER" class="btn btn-primary" />
+    </div>
+
+</form>
+
+
+<section class="content pt-3">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">KULLANICI YÖNETİMİ</h3>
+
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-default">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+
+
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.KullanıcıID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.EPosta)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Sifre)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Rol)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.KullanıcıID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EPosta)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sifre)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Rol.RolAdı)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.KullanıcıID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.KullanıcıID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.KullanıcıID">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    </div>
+</section>

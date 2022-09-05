@@ -1,0 +1,49 @@
+﻿@model otelyonet.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Rezervasyon</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BasTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BasTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BitTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BitTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Müşteri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Müşteri.MobilNO)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oda.OdaAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ÖdemeTipi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ÖdemeTipi.ÖdemeTipiAdı)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RezervasyonID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

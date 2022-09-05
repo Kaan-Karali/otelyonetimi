@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Kullanıcı>
+@{
+    ViewData["Title"] = "Kullanıcılara atanan roller";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+@foreach (string eleman in Model.Select(a=>a.Rol.RolAdı).Distinct())
+{
+    <h1>
+        @eleman
+    
+    </h1>
+}

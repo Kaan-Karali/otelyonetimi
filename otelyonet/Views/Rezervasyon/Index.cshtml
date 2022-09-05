@@ -1,0 +1,60 @@
+﻿@model IEnumerable<otelyonet.Models.Rezervasyon>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BasTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BitTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Müşteri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ÖdemeTipi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BasTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BitTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Müşteri.MobilNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oda.OdaAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ÖdemeTipi.ÖdemeTipiAdı)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RezervasyonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RezervasyonID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RezervasyonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

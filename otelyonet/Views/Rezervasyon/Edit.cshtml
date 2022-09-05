@@ -1,0 +1,52 @@
+﻿@model otelyonet.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Rezervasyon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RezervasyonID" />
+            <div class="form-group">
+                <label asp-for="MüşteriID" class="control-label"></label>
+                <select asp-for="MüşteriID" class="form-control" asp-items="ViewBag.MüşteriID"></select>
+                <span asp-validation-for="MüşteriID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdaID" class="control-label"></label>
+                <select asp-for="OdaID" class="form-control" asp-items="ViewBag.OdaID"></select>
+                <span asp-validation-for="OdaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ÖdemeTipiID" class="control-label"></label>
+                <select asp-for="ÖdemeTipiID" class="form-control" asp-items="ViewBag.ÖdemeTipiID"></select>
+                <span asp-validation-for="ÖdemeTipiID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BasTarih" class="control-label"></label>
+                <input asp-for="BasTarih" class="form-control" />
+                <span asp-validation-for="BasTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BitTarih" class="control-label"></label>
+                <input asp-for="BitTarih" class="form-control" />
+                <span asp-validation-for="BitTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

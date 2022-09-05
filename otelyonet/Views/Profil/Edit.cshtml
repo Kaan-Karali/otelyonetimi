@@ -1,0 +1,62 @@
+﻿@model otelyonet.Models.Profil
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Profil</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProfilID" />
+            <div class="form-group">
+                <label asp-for="KullanıcıID" class="control-label"></label>
+                <select asp-for="KullanıcıID" class="form-control" asp-items="ViewBag.KullanıcıID"></select>
+                <span asp-validation-for="KullanıcıID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adres" class="control-label"></label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CepNO" class="control-label"></label>
+                <input asp-for="CepNO" class="form-control" />
+                <span asp-validation-for="CepNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvNO" class="control-label"></label>
+                <input asp-for="EvNO" class="form-control" />
+                <span asp-validation-for="EvNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="İşNO" class="control-label"></label>
+                <input asp-for="İşNO" class="form-control" />
+                <span asp-validation-for="İşNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meslek" class="control-label"></label>
+                <input asp-for="Meslek" class="form-control" />
+                <span asp-validation-for="Meslek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResimYolu" class="control-label"></label>
+                <input asp-for="ResimYolu" class="form-control" />
+                <span asp-validation-for="ResimYolu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

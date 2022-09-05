@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Oda>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OdaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdaAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KatNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YatakSayısı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdaFiyatı)
+            </th>
+            <th>İŞLEMLER</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Oda oda in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => oda.OdaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oda.OdaAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oda.KatNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oda.YatakSayısı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => oda.OdaFiyatı) <span class="font-weight-bolder text-blue">&#8378</span>
+            </td>
+            <td>
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-outline-info" data-toggle="dropdown">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"> <a class="text-white" asp-action="Edit" asp-route-id="@oda.OdaID">Edit</a></li>
+                        <li class="dropdown-item"><a class="text-white" asp-action="Details" asp-route-id="@oda.OdaID">Details</a></li>
+                        <li class="dropdown-item"><a class="text-white" asp-action="Delete" asp-route-id="@oda.OdaID">Delete</a></li>
+                        <li class="dropdown-item"><a class="text-white" asp-action="OdaÖzelliği" asp-route-id="@oda.OdaID">Oda Özellik</a></li>
+                    </ul>
+                </div>
+                <!-- /btn-group -->
+
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<otelyonet.Models.Müşteri>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MüşteriTamAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MüşteriSoyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobilNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cinsiyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MüşteriTipi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MüşteriTamAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MüşteriSoyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobilNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet.CinsiyetAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MüşteriTipi.MüşteriTipiAdı)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MüşteriID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MüşteriID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MüşteriID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

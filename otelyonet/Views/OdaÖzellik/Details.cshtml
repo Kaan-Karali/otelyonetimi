@@ -1,0 +1,49 @@
+﻿@model otelyonet.Models.OdaÖzellik
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OdaÖzellik</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Açıklama)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Açıklama)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DuşTipi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DuşTipi.DuşTipiAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OdaTipi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OdaTipi.OdaTipiAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Manzara)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Manzara.ManzaraAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oda.OdaAdı)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OdaÖzellikID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

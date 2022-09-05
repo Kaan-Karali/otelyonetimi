@@ -1,0 +1,47 @@
+﻿@model otelyonet.Models.Oda
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Oda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OdaID" />
+            <div class="form-group">
+                <label asp-for="OdaAdı" class="control-label"></label>
+                <input asp-for="OdaAdı" class="form-control" />
+                <span asp-validation-for="OdaAdı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KatNO" class="control-label"></label>
+                <input asp-for="KatNO" class="form-control" />
+                <span asp-validation-for="KatNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YatakSayısı" class="control-label"></label>
+                <input asp-for="YatakSayısı" class="form-control" />
+                <span asp-validation-for="YatakSayısı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdaFiyatı" class="control-label"></label>
+                <input asp-for="OdaFiyatı" class="form-control" />
+                <span asp-validation-for="OdaFiyatı" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

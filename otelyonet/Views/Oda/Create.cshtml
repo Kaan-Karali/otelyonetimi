@@ -1,0 +1,56 @@
+﻿@model otelyonet.Models.Oda
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<section class="content pt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">ODA EKLE</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <form asp-action="Create">
+                            <div class="card-body">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="OdaAdı" class="control-label"></label>
+                                    <input asp-for="OdaAdı" class="form-control" />
+                                    <span asp-validation-for="OdaAdı" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="KatNO" class="control-label"></label>
+                                    <input asp-for="KatNO" class="form-control" />
+                                    <span asp-validation-for="KatNO" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="YatakSayısı" class="control-label"></label>
+                                    <input asp-for="YatakSayısı" class="form-control" />
+                                    <span asp-validation-for="YatakSayısı" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="OdaFiyatı" class="control-label"></label>
+                                    <input asp-for="OdaFiyatı" class="form-control" />
+                                    <span asp-validation-for="OdaFiyatı" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="EKLE" class="btn btn-primary" />
+                                </div>
+                                <div>
+                                    <a asp-action="Index">Listeye Dön</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

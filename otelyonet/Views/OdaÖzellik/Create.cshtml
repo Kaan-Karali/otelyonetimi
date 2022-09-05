@@ -1,0 +1,47 @@
+﻿@model otelyonet.Models.OdaÖzellik
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>OdaÖzellik</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OdaID" class="control-label"></label>
+                <select asp-for="OdaID" class ="form-control" asp-items="ViewBag.OdaID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ManzaraID" class="control-label"></label>
+                <select asp-for="ManzaraID" class ="form-control" asp-items="ViewBag.ManzaraID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OdaTipiID" class="control-label"></label>
+                <select asp-for="OdaTipiID" class ="form-control" asp-items="ViewBag.OdaTipiID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuşTipiID" class="control-label"></label>
+                <select asp-for="DuşTipiID" class ="form-control" asp-items="ViewBag.DuşTipiID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Açıklama" class="control-label"></label>
+                <input asp-for="Açıklama" class="form-control" />
+                <span asp-validation-for="Açıklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

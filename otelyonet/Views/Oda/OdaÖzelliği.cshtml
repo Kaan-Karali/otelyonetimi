@@ -1,0 +1,105 @@
+﻿@model OdaÖzellik
+
+
+@{
+    ViewData["Title"] = "Oda Özelliği";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+@if (Model == null)
+{
+
+    <h1>EKLE</h1>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-controller="Oda" asp-action="OdaÖzelliği" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="OdaID" class="control-label"></label>
+                        <select asp-for="OdaID" class="form-control" asp-items="ViewBag.OdaID"></select>
+                    </div>*@
+                <input type="hidden" asp-for="OdaID" value="@Url.ActionContext.RouteData.Values["id"]" />
+
+                <div class="form-group">
+                    <label asp-for="ManzaraID" class="control-label"></label>
+                    <select asp-for="ManzaraID" class="form-control" asp-items="ViewBag.ManzaraListesi"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OdaTipiID" class="control-label"></label>
+                    <select asp-for="OdaTipiID" class="form-control" asp-items="ViewBag.OdaTipiListesi"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DuşTipiID" class="control-label"></label>
+                    <select asp-for="DuşTipiID" class="form-control" asp-items="ViewBag.DuşTipiListesi"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Açıklama" class="control-label"></label>
+                    <input asp-for="Açıklama" class="form-control" />
+                    <span asp-validation-for="Açıklama" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" asp-route-seçenek="1" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <a asp-action="Index">Back to List</a>
+}
+else
+{
+
+    <h1>DÜZENLE</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-controller="Oda" asp-action="OdaÖzelliği" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                <input type="hidden" asp-for="OdaÖzellikID" />
+                <input type="hidden" asp-for="OdaID" value="@Url.ActionContext.RouteData.Values["id"]" />
+
+
+                <div class="form-group">
+                    <label asp-for="ManzaraID" class="control-label"></label>
+                    <select asp-for="ManzaraID" class="form-control" asp-items="ViewBag.ManzaraListesi"></select>
+                    <span asp-validation-for="ManzaraID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OdaTipiID" class="control-label"></label>
+                    <select asp-for="OdaTipiID" class="form-control" asp-items="ViewBag.OdaTipiListesi"></select>
+                    <span asp-validation-for="OdaTipiID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DuşTipiID" class="control-label"></label>
+                    <select asp-for="DuşTipiID" class="form-control" asp-items="ViewBag.DuşTipiListesi"></select>
+                    <span asp-validation-for="DuşTipiID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Açıklama" class="control-label"></label>
+                    <input asp-for="Açıklama" class="form-control" />
+                    <span asp-validation-for="Açıklama" class="text-danger"></span>
+                </div>
+                <div class="form-group m-3">
+                    <input type="submit" value="Save" class="btn btn-primary" asp-route-seçenek="2" />
+                    <input type="submit" value="Delete" class="btn btn-danger ml-5" asp-route-seçenek="3" />
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+
+}

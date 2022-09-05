@@ -1,0 +1,34 @@
+﻿@model otelyonet.Models.Kategori
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KategoriAdı)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KategoriAdı)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BabaKategori)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BabaKategori.KategoriAdı)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KategoriID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,146 @@
+﻿@charset "UTF-8";
+
+@font-face {
+    font-family: "hotel";
+    src: url("../fonts/hotel.eot");
+    src: url("../fonts/hotel.eot?#iefix") format("embedded-opentype"), url("../fonts/hotel.woff") format("woff"), url("../fonts/hotel.ttf") format("truetype"), url("../fonts/hotel.svg#hotel") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hotelicon {
+    font-family: "hotel" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+}
+
+.hotelicon-air-condition:before {
+    content: "\61";
+}
+
+.hotelicon-bathtub:before {
+    content: "\62";
+}
+
+.hotelicon-bed:before {
+    content: "\63";
+}
+
+.hotelicon-burger:before {
+    content: "\64";
+}
+
+.hotelicon-card:before {
+    content: "\65";
+}
+
+.hotelicon-coctail:before {
+    content: "\66";
+}
+
+.hotelicon-coffee:before {
+    content: "\67";
+}
+
+.hotelicon-compas:before {
+    content: "\68";
+}
+
+.hotelicon-dining:before {
+    content: "\69";
+}
+
+.hotelicon-guest:before {
+    content: "\6a";
+}
+
+.hotelicon-guestbook:before {
+    content: "\6b";
+}
+
+.hotelicon-hangers:before {
+    content: "\6c";
+}
+
+.hotelicon-clock:before {
+    content: "\6d";
+}
+
+.hotelicon-hotel:before {
+    content: "\6e";
+}
+
+.hotelicon-icecream:before {
+    content: "\6f";
+}
+
+.hotelicon-keys:before {
+    content: "\70";
+}
+
+.hotelicon-king-bed:before {
+    content: "\71";
+}
+
+.hotelicon-kitchen:before {
+    content: "\72";
+}
+
+.hotelicon-parking:before {
+    content: "\73";
+}
+
+.hotelicon-phone:before {
+    content: "\74";
+}
+
+.hotelicon-plane:before {
+    content: "\75";
+}
+
+.hotelicon-pool:before {
+    content: "\76";
+}
+
+.hotelicon-private:before {
+    content: "\77";
+}
+
+.hotelicon-roomservice:before {
+    content: "\78";
+}
+
+.hotelicon-stuff:before {
+    content: "\79";
+}
+
+.hotelicon-tv:before {
+    content: "\7a";
+}
+
+.hotelicon-washer:before {
+    content: "\41";
+}
+
+.hotelicon-wheel-chair:before {
+    content: "\42";
+}
+
+.hotelicon-wheels:before {
+    content: "\43";
+}
+
+.hotelicon-wifi:before {
+    content: "\44";
+}
+
+.hotelicon-elevator:before {
+    content: "\45";
+}
